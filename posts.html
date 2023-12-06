@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html class="html" lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> GET PET BACK </title>
+<!--Политехнический колледж городского хозяйства
+Учебная практика ОП08
+студент гр. ИР-21-4 Костерина Людмила
+-->
+<link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" >
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.html"><img src="img/logo.png" class=" rounded-3" alt="logo"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link text-light" aria-current="page" href="index.html">Главная</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="cabinet.html">Личный кабинет</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="CreatePost.html">Добавить пост</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="posts.html">Поиск по объявлениям</a>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" list="pets" placeholder="Поиск" aria-label="Search">
+                  <button class="btn btn-outline-light" onclick="">Поиск</button>
+                  <datalist id="pets">
+                    <option value="Кошка">
+                    </option><option value="Феник">
+                    </option><option value="Норка">
+                    </option><option value="Вомбат">
+                    </option><option value="Хамелеон">
+                  </option></datalist>
+                </form>
+                <div class="col-md-3 text-end">
+                    <button type="button" id="loginButton" class="btn btn-outline-light me-2">Войти</button>
+                    <button type="button" id="RegistrationButton" class="btn btn-light">Зарегистрироваться</button>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </header>
+        <main class="container mt-4">
+          
+ 
+          <div class="mb-4">
+          <button type="button"  class="btn btn-dark text-light">Создать объявление</button></div>
+
+                    <!-- BEGIN FILTER BY CATEGORY -->
+                    <h4>Фильтрация:</h4> 
+                    <div class="row">
+                      <div class="col-md-10">
+<h5>По району:</h5> 
+<div class="mb-4">
+<div class="row">
+  <div class="col-2">
+    <div class="checkbox"> 
+      <label><input type="checkbox" class="icheck"> Адмиралтейский</label> 
+    </div> 
+  </div>
+  <div class="col-2">
+    <div class="checkbox"> 
+      <label><input type="checkbox" class="icheck"> Василеостровский</label> 
+    </div> 
+  </div>
+  <div class="col-2">
+    <div class="checkbox"> 
+      <label><input type="checkbox" class="icheck"> Выборгский</label> 
+    </div> 
+  </div>
+</div>
+<div class="row">
+  <div class="col-2">
+    <div class="checkbox"> 
+      <label><input type="checkbox" class="icheck"> Калининский</label> 
+    </div> 
+  </div>
+  <div class="col-2">
+    <div class="checkbox"> 
+      <label><input type="checkbox" class="icheck"> Кировский</label> 
+    </div> 
+  </div>
+  <div class="col-3">
+    <div class="checkbox"> 
+      <label><input type="checkbox" class="icheck"> Красногвардейский</label> 
+    </div> 
+  </div>
+</div>
+<div class="row">
+  <div class="col-2">
+    <div class="checkbox"> 
+      <label><input type="checkbox" class="icheck"> Красносельский</label> 
+    </div> 
+  </div>
+  <div class="col-2">
+    <div class="checkbox"> 
+      <label><input type="checkbox" class="icheck"> Московский</label> 
+    </div> 
+  </div>
+  <div class="col-2">
+    <div class="checkbox"> 
+      <label><input type="checkbox" class="icheck"> Невский</label> 
+    </div> 
+  </div>
+</div>
+<div class="row">
+  <div class="col-2">
+    <div class="checkbox"> 
+      <label><input type="checkbox" class="icheck"> Петроградский</label> 
+    </div> 
+  </div>
+  <div class="col-2">
+    <div class="checkbox"> 
+      <label><input type="checkbox" class="icheck"> Приморский</label> 
+    </div> 
+  </div>
+  <div class="col-2">
+    <div class="checkbox"> 
+      <label><input type="checkbox" class="icheck"> Фрунзенский</label> 
+    </div> 
+  </div>
+</div>
+</div>
+                      </div>
+  <div class="col-md-2">
+  <h5>По статусy: </h5>
+  <div class="checkbox">
+    <label><input type="checkbox" class="icheck"> active</label>
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox" class="icheck"> wasFound</label>
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox" class="icheck"> archive</label>
+  </div>
+</div>
+</div>
+                    <!-- END FILTER BY CATEGORY -->
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-12">
+              
+<div class="row featurette bg-dark text-white align-items-center  mb-4 w-100" style="height: 110;">
+    
+    <div class=" d-flex justify-content-center mt-4">
+      <img src="img/popyg.jpg" class="img-fluid" alt="Попугай">
+    </div>
+   
+      <div class="d-flex flex-column border m-5 p-3 justify-content-center mx-auto" style="max-width: 500px;"> 
+        
+        <div class="d-flex">
+            <p class="text-info me-2 d-inline">id: </p>
+            <p class="d-inline">57</p>
+        </div >
+        <div class="d-flex"><p class=" text-info me-2">Статус:</p>
+        <p >wasFound</p></div>
+        <div class="d-flex"> <p class="text-info me-2 d-inline"> Вид животного:</p><p>Попугай</p>        </div >
+
+            <div class="d-flex"><p class="text-info me-2 d-inline">Описание:</p><p> У волнистого попугая ступенчатый хвост, длина которого составляет порядка 10 сантиметров. Благодаря длинному хвосту визуально увеличивается и величина самого попугая, хотя длина корпуса не превышает 23 см. Вес взрослой особи составляет не больше 50 граммов.</p>        </div >
+                <div class="d-flex"> <p class="text-info me-2 d-inline">Номер чипа:</p><p> po-013-spb</p>        </div >
+                    <div class="d-flex"> <p class="text-info me-2 d-inline">Район:</p><p> Московский</p>        </div >
+                        <div class="d-flex"><p class="text-info me-2 d-inline" >Дата:</p><p> 14-08-2021</p>        </div >
+        <div class="text-center">
+          <button type="button" class="btn btn-outline-light me-2">Подробнее</button>
+        </div>
+    </div>
+  </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-12">
+                
+                <div class="row featurette bg-dark text-white align-items-center mb-4 w-100" style="height: 110;">
+                    <div class=" d-flex justify-content-center mt-4">
+                      <img src="img/dicobras.jpg" class="img-fluid" alt="дикобраз">
+                    </div>
+                   
+                      <div class="d-flex flex-column border m-5 p-3 mx-auto" style="max-width: 500px;"> 
+                        
+                        <div class="d-flex">
+                            <p class="text-info me-2 d-inline">id: </p>
+                            <p class="d-inline">87</p>
+                        </div >
+                        <div class="d-flex"><p class="text-info me-2" >Статус:</p>
+                          <p>active</p></div>
+                        <div class="d-flex"> <p class="text-info me-2 d-inline"> Вид животного:</p><p>Дикобраз</p>        </div >
+                            <div class="d-flex"><p class="text-info me-2 d-inline">Описание:</p><p> Длина тела составляет 45-56 см. Длина хвоста 2,5-19 см. Масса 3,8-5,4 кг. Тело покрыто полыми иглами, острыми плоскими иглами и жёсткой щетиной длиной до 16 см. Окрас в целом тёмно-коричневый, иголки с белыми кончиками. Снизу на шее расположены пятна грязно-белого цвета.</p>        </div >
+                                <div class="d-flex"> <p class="text-info me-2 d-inline">Номер чипа:</p><p> di-017-spb</p>        </div >
+                                    <div class="d-flex"> <p class="text-info me-2 d-inline">Район:</p><p> Московский</p>        </div >
+                                        <div class="d-flex"><p class="text-info me-2 d-inline" >Дата:</p><p> 05-03-2023</p>      </div >
+                        <div class="text-center">
+                          <button type="button" class="btn btn-outline-light me-2">Подробнее</button>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+            
+                <div class="col-lg-6 col-md-6 col-12">
+                
+                    <div class="row featurette bg-dark text-white align-items-center mb-4 w-100" style="height: 110;">
+                        <div class=" d-flex justify-content-center mt-4">
+                          <img src="img/rat.jpg" class="img-fluid" alt="Крыса">
+                        </div>
+                       
+                          <div class="d-flex flex-column border m-5 p-3 mx-auto" style="max-width: 500px;"> 
+                            
+                            <div class="d-flex">
+                                <p class="text-info me-2 d-inline">id: </p>
+                                <p class="d-inline">137</p>
+                            </div >
+                            <div class="d-flex"><p class=" text-info me-2">Статус:</p>
+                              <p >wasFound</p></div>
+                            <div class="d-flex"> <p class="text-info me-2 d-inline"> Вид животного:</p><p>Крыса</p>        </div >
+                                <div class="d-flex"><p class="text-info me-2 d-inline">Описание:</p><p>Белая крыса – это особый вид крысы с белой шерстью. Ее уход требует особого внимания и заботы, так как белая шерсть 
+                                  более чувствительна к загрязнениям и требует регулярной чистки.
+                                   Кроме того, они более чувствительны к солнечному свету и нуждаются в освещении с умеренной интенсивностью.</p>        </div >
+                                    <div class="d-flex"> <p class="text-info me-2 d-inline">Номер чипа:</p><p> hapo-035-spb</p>        </div >
+                                        <div class="d-flex"> <p class="text-info me-2 d-inline">Район:</p><p> Центральный</p>        </div >
+                                            <div class="d-flex"><p class="text-info me-2 d-inline" >Дата:</p><p> 19-02-2022</p>        </div >
+                            <div class="text-center">
+                              <button type="button" class="btn btn-outline-light me-2">Подробнее</button>
+                            </div>
+                        </div>
+                      </div>
+              </div>
+          
+                <div class="col-lg-6 col-md-6 col-12">
+                
+                    <div class="row featurette bg-dark text-white align-items-center mb-4 w-100" style="height: 110;">
+                        <div class=" d-flex justify-content-center mt-4">
+                          <img src="img/vombat.jpg" class="img-fluid" alt="Вомбат">
+                        </div>
+                       
+                          <div class="d-flex flex-column border m-5 p-3 mx-auto" style="max-width: 500px;"> 
+                            
+                            <div class="d-flex">
+                                <p class="text-info me-2 d-inline">id: </p>
+                                <p class="d-inline">22</p>
+                            </div >
+                            <div class="d-flex"><p class="text-info me-2" >Статус:</p>
+                              <p >wasFound</p></div>
+                            <div class="d-flex"> <p class="text-info me-2 d-inline"> Вид животного:</p><p>Вомбат</p>        </div >
+                                <div class="d-flex"><p class="text-info me-2 d-inline">Описание:</p><p> Вомбат — крупное и коренастое сумчатое млекопитающее родом из Австралии. 
+                                  Вомбаты могут достигать в длину 120 см и весить до 36 кг. В неволе вомбаты живут до 20 лет, а иногда и больше.
+                                   Вомбаты, как правило, одиночки. Они прирожденные копатели, их норы могут достигать 200 м в длину и связываться в целую сеть тоннелей.</p>        </div >
+                                    <div class="d-flex"> <p class="text-info me-2 d-inline">Номер чипа:</p><p> vo-017-spb</p>        </div >
+                                        <div class="d-flex"> <p class="text-info me-2 d-inline">Район:</p><p> Центральный</p>        </div >
+                                            <div class="d-flex"><p class="text-info me-2 d-inline" >Дата:</p><p> 19-06-2022</p>        </div >
+                            <div class="text-center">
+                              <button type="button" class="btn btn-outline-light me-2">Подробнее</button>
+                            </div>
+                        </div>
+                      </div>
+              </div>
+         
+                <div class="col-lg-6 col-md-6 col-12">
+                
+                    <div class="row featurette bg-dark text-white align-items-center mb-4 w-100" style="height: 110;">
+                        <div class=" d-flex justify-content-center mt-4">
+                          <img src="img/norka.jpg" class="img-fluid" alt="Норка">
+                        </div>
+                       
+                          <div class="d-flex flex-column border m-5 p-3 mx-auto" style="max-width: 500px;"> 
+                            
+                            <div class="d-flex">
+                                <p class="text-info me-2 d-inline">id: </p>
+                                <p class="d-inline">66</p>
+                            </div >
+                            <div class="d-flex"><p class=" text-info me-2">Статус:</p>
+                              <p >wasFound</p></div>
+                            <div class="d-flex"> <p class="text-info me-2 d-inline"> Вид животного:</p><p>Норка</p>        </div >
+                                <div class="d-flex"><p class="text-info me-2 d-inline">Описание:</p><p> Норка – хищник из отряда млекопитающих, отличающийся продолговатым телом валикообразной формы. 
+                                  По внешнему виду подобна хорьку, их часто путают между собой ввиду схожей небольшой мордочки с маленькими, которые сложно заметить в густой шерсти, округлыми ушами.</p>        </div >
+                                    <div class="d-flex"> <p class="text-info me-2 d-inline">Номер чипа:</p><p> no-066-spb</p>        </div >
+                                        <div class="d-flex"> <p class="text-info me-2 d-inline">Район:</p><p> Выборгский</p>        </div >
+                                            <div class="d-flex"><p class="text-info me-2 d-inline" >Дата:</p><p> 10-10-2023</p>        </div >
+                            <div class="text-center">
+                              <button type="button" class="btn btn-outline-light me-2">Подробнее</button>
+                            </div>
+                        </div>
+                      </div>
+              </div>
+             
+                <div class="col-lg-6 col-md-6 col-12">
+                
+                    <div class="row featurette bg-dark text-white align-items-center mb-4 w-100" style="height: 110;">
+                        <div class=" d-flex justify-content-center mt-4">
+                          <img src="img/catblack.jpg" class="img-fluid" alt="Попугай">
+                        </div>
+                       
+                          <div class="d-flex flex-column border m-5 p-3 mx-auto" style="max-width: 500px;"> 
+                            
+                            <div class="d-flex">
+                                <p class="text-info me-2 d-inline">id: </p>
+                                <p class="d-inline">88</p>
+                            </div >
+                            <div class="d-flex"><p class="text-info me-2" >Статус:</p>
+                              <p>active</p></div>
+                            <div class="d-flex"> <p class="text-info me-2 d-inline"> Вид животного:</p><p>Чёрный кот</p>        </div >
+                                <div class="d-flex"><p class="text-info me-2 d-inline">Описание:</p><p>Зовут Сириус. Черная кошка — красивое и загадочное животное, частый герой литературных произведений, суеверий и примет. В Древнем Египте черную кошку почитали как божество, но отношение к этим созданиям не всегда было наполнено любовью: в Средневековье они вселяли в людей страх. </p>        </div >
+                                    <div class="d-flex"> <p class="text-info me-2 d-inline">Номер чипа:</p><p> bc-066-spb</p>        </div >
+                                        <div class="d-flex"> <p class="text-info me-2 d-inline">Район:</p><p> Выборгский</p>        </div >
+                                            <div class="d-flex"><p class="text-info me-2 d-inline" >Дата:</p><p> 03-12-2023</p>        </div >
+                            <div class="text-center">
+                              <button type="button" class="btn btn-outline-light me-2">Подробнее</button>
+                            </div>
+                        </div>
+                      </div> 
+              </div>
+              <!-- Продолжение-->
+            </div>
+            <div class="d-flex justify-content-center" >
+              <nav aria-label="Page navigation example" >
+                <ul class="pagination ">
+                  <li class="page-item">
+                    <a class="page-link bg-dark text-light" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="page-item active text-light"><a class="page-link bg-dark" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link bg-dark text-light" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link bg-dark text-light" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link bg-dark text-light" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            
+            
+          </main>
+
+
+
+
+
+
+               
+       
+          <footer class="border-bottom bg-dark" >
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+              <li class="nav-item"><a href="index.html" class="nav-link px-2 text-light">Главная</a></li>
+              <li class="nav-item"><a href="cabinet.html" class="nav-link px-2 text-light">Личный кабинет</a></li>
+              <li class="nav-item"><a href="CreatePost.html" class="nav-link px-2 text-light">Добавить пост</a></li>
+              <li class="nav-item"><a href="posts.html" class="nav-link px-2 text-light">Поиск по объявлениям</a></li>
+              <li class="nav-item"><a href="login.html" class="nav-link px-2 text-light">Вход</a></li>
+              <li class="nav-item"><a href="registration.html" class="nav-link px-2 text-light">Регистрация</a></li>
+            </ul>
+            <p class="text-center text-light"> Телефон “8 (800)123-45-67” 
+              e-mail: mail@getpetback.ru
+              </p>
+            <p class="text-center text-secondary">© 2023 GET PET BACK</p>
+          </footer>
+      </div>
+      <script src="main.js" type="text/javascript"></script>
+      <script src="./node_modules/bootstrap//dist/js/bootstrap.bundle.min.js"></script>
+        </body></html>
